@@ -69,7 +69,7 @@ class Tree():
             return 0
         for node in self.nodes:
             if node['callFrame']['functionName'] not in  ['(idle)', '(program)', '(root)','(garbage collector)'] and node['hitCount']>500 :
-                curConcentrate = node['hitCount'] / totalSamples
+                curConcentrate = node['hitCount'] / float(totalSamples)
                 curConcentrateIdx = node['id']
                 maxConcentratedIdx  = curConcentrateIdx if curConcentrate > maxConcentrated else maxConcentratedIdx
                 maxConcentrated  = curConcentrate if curConcentrate > maxConcentrated else maxConcentrated
